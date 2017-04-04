@@ -34,8 +34,12 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise'
 
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'rspec-rails'
+  gem 'launchy'
+  gem 'pry'
+  gem 'shoulda-matchers'
   gem 'byebug'
+  gem 'capybara'
 end
 
 group :development do
