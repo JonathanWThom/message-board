@@ -5,6 +5,7 @@
   <hr>
   <ul>
     <% @posts.each do |post| %>
+    <!--make this link to wrap a whole div-->
       <li><%= link_to post.header, post_path(post) %></li>
     <% end %>
   </ul>
