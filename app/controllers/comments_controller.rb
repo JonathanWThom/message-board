@@ -14,6 +14,7 @@ class CommentsController < ApplicationController
     @post = Post.find(params[:post_id])
     @comment = @post.comments.new(body: comment_params[:body], user_id: current_user.id)
     if @comment.save
+      @comment = Comment.new
       flash[:notice] = 'Comment Saved'
       respond_to do |format|
         format.html { post_path(@post) }
