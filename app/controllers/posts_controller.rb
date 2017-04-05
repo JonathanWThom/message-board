@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   before_action :authenticate_user!, :except => [:index, :show]
 
   def index
-    @posts = Post.order(created_at: :desc)
+    @posts = Post.order(created_at: :desc).paginate(:page => params[:page], :per_page => 5)
     @post = Post.new
   end
 
@@ -22,7 +22,7 @@ class PostsController < ApplicationController
 
   def create
     @post = current_user.posts.new(post_params)
-    @posts = Post.order(created_at: :desc)
+    @posts = Post.order(created_at: :desc).paginate(:page => params[:page], :per_page => 5)
     if @post.save
       respond_to do |format|
         format.html { posts_path }
