@@ -1,8 +1,4 @@
-<h1>Message Board</h1>
-
-<div id="posts">
-  <%= render 'posts' %>
-</div>
+<h1 class="text-center">Message Board</h1>
 
 <% if current_user %>
   <div id="new_post">
@@ -11,3 +7,7 @@
 <% else %>
   <%= link_to 'Sign Up to Post Something', new_user_registration_path %>
 <% end %>
+
+<div id="posts">
+  <%= render 'posts' %>
+</div>
