@@ -3,14 +3,14 @@
 
 <p><%= @post.body %></p>
 
-<% if @post.comments %>
-  <h3>All Comments</h3>
-  <% @post.comments.each do |comment| %>
-    <p><%= comment.body %></p>
-    <p><%= comment.user.full_name %></p>
-    <hr>
-    <p><%= comment.user.signature %></p>
-  <% end %>
-<% end %>
+<div id="comments">
+  <%= render "comments/comments" %>
+</div>
 
-<%= render 'comments/new' %>
+<% if current_user %>
+  <div id="new_comment">
+    <h3><%= render 'comments/add_comment' %></h3>
+  </div>
+<% else %>
+  <%= link_to 'Sign Up to Add a Comment', new_user_registration_path %>
+<% end %>

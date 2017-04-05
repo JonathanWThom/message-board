@@ -1,0 +1,12 @@
+<% if @posts.any? %>
+  <h3>All Posts</h3>
+  <hr>
+  <ul>
+    <% @posts.each do |post| %>
+    <!--make this link to wrap a whole div-->
+      <li><%= link_to post.header, post_path(post) %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <h3>There are no posts yet!</h3>
+<% end %>
