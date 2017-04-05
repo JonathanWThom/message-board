@@ -1,7 +1,6 @@
 <%= render "layouts/errors", :object => @comment %>
 
-<%= form_for [@post, @comment], :remote => true do |f| %>
-  <%= f.label :body %>
-  <%= f.text_area :body %>
+<%= bootstrap_form_for [@post, @comment], :remote => true do |f| %>
+  <%= f.text_area :body, :required => true %>
   <%= f.submit %>
 <% end %>

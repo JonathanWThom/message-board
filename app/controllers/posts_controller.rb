@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!, :except => [:index]
+  before_action :authenticate_user!, :except => [:index, :show]
 
   def index
     @posts = Post.order(created_at: :desc)
@@ -9,6 +9,7 @@ class PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
     @comment = Comment.new
+    @comments = @post.comments.order(created_at: :desc)
   end
 
   def new

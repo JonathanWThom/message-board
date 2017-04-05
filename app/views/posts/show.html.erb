@@ -1,7 +1,8 @@
-<h3><%= @post.title %></h3>
-<h5><%= @post.user.full_name %></h5>
-
-<p><%= @post.body %></p>
+<h1 class="text-center"><%= @post.title %></h3>
+<h5 class="text-center"><%= @post.user.full_name %></h5>
+<hr>
+<p class="text-center"><%= @post.body %></p>
+<hr>
 
 <div id="comments">
   <%= render "comments/comments" %>
@@ -12,5 +13,5 @@
     <h3><%= render 'comments/add_comment' %></h3>
   </div>
 <% else %>
-  <%= link_to 'Sign Up to Add a Comment', new_user_registration_path %>
+  <h3 class="text-center"><%= link_to 'Sign Up to Add a Comment', new_user_registration_path %></h3>
 <% end %>

@@ -1,9 +1,14 @@
 <% if @comments %>
-  <h3>All Comments</h3>
+  <h3 class="text-center">All Comments</h3>
   <% @comments.each do |comment| %>
-    <p><%= comment.body %></p>
-    <p><%= comment.user.full_name %></p>
-    <hr>
-    <p><%= comment.user.signature %></p>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= comment.user.full_name %></h3>
+        <p><em><%= comment.user.signature %></em></p>
+      </div>
+      <div class="panel-body">
+        <%= comment.body %>
+      </div>
+    </div>
   <% end %>
 <% end %>
