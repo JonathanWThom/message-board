@@ -23,6 +23,7 @@ class CommentsController < ApplicationController
         format.js
       end
     else
+      flash[:notice] = 'Something went wrong!'
       redirect_to post_path(@post)
     end
   end

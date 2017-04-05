@@ -1,5 +1,3 @@
-<%= render "layouts/errors", :object => @post %>
-
 <%= bootstrap_form_for [@user, @post], :remote => true do |f| %>
   <%= f.text_field :title, :required => true %>
   <%= f.text_area :body, :required => true %>

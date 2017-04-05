@@ -29,6 +29,7 @@ class PostsController < ApplicationController
         format.js
       end
     else
+      flash[:notice] = 'Something went wrong!'
       redirect_to posts_path
     end
   end
