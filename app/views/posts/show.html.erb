@@ -2,3 +2,14 @@
 <h5><%= @post.user.full_name %></h5>
 
 <p><%= @post.body %></p>
+
+<% if @post.comments %>
+  <h3>All Comments</h3>
+  <% @post.comments.each do |comment| %>
+    <p><%= comment.body %></p>
+    <p><%= comment.user.full_name %></p>
+    <hr>
+  <% end %>
+<% end %>
+
+<%= render 'comments/new' %>
