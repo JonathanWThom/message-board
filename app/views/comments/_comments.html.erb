@@ -1,6 +1,6 @@
-<% if @post.comments %>
+<% if @comments %>
   <h3>All Comments</h3>
-  <% @post.comments.each do |comment| %>
+  <% @comments.each do |comment| %>
     <p><%= comment.body %></p>
     <p><%= comment.user.full_name %></p>
     <hr>

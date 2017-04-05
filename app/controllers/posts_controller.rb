@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   before_action :authenticate_user!, :except => [:index]
 
   def index
-    @posts = Post.all
+    @posts = Post.order(created_at: :desc)
     @post = Post.new
   end
 
@@ -21,7 +21,7 @@ class PostsController < ApplicationController
 
   def create
     @post = current_user.posts.new(post_params)
-    @posts = Post.all
+    @posts = Post.order(created_at: :desc)
     if @post.save
       respond_to do |format|
         format.html { posts_path }
