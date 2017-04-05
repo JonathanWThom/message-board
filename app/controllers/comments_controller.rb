@@ -3,7 +3,7 @@ class CommentsController < ApplicationController
 
   def new
     @post = Post.find(params[:post_id])
-    @comments = @post.comments.order(created_at: :desc)
+    @comments = @post.comments.order(created_at: :asc)
     @comment = @post.comments.new
     respond_to do |format|
       format.html { post_path(@post) }
@@ -13,7 +13,7 @@ class CommentsController < ApplicationController
 
   def create
     @post = Post.find(params[:post_id])
-    @comments = @post.comments.order(created_at: :desc)
+    @comments = @post.comments.order(created_at: :asc)
     @comment = @post.comments.new(body: comment_params[:body], user_id: current_user.id)
     if @comment.save
       @comment = Comment.new
