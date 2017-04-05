@@ -13,4 +13,6 @@
   <h3>There are no posts yet!</h3>
 <% end %>
 
-<%= render "new" %>
+<div id="new_post">
+  <h3><%= link_to 'Create a Post', new_post_path, remote: true %></h3>
+</div>

@@ -3,7 +3,7 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all
-    @post = current_user.posts.new
+    @post = Post.new
   end
 
   def show
@@ -11,10 +11,21 @@ class PostsController < ApplicationController
     @comment = Comment.new
   end
 
+  def new
+    @post = Post.new
+    respond_to do |format|
+      format.html { posts_path }
+      format.js
+    end
+  end
+
   def create
     @post = current_user.posts.new(post_params)
     if @post.save
-      redirect_to posts_path
+      respond_to do |format|
+        format.html { posts_path }
+        format.js
+      end
     else
       redirect_to posts_path
     end
