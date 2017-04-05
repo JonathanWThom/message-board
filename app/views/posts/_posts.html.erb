@@ -1,20 +1,18 @@
 <% if @posts.any? %>
   <h3 class="text-center">All Posts</h3>
-  <hr>
-  <ul>
-    <% @posts.each do |post| %>
-      <%= link_to post_path(post) do %>
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h3 class="panel-title"><%= post.title %></h3>
-          </div>
-          <div class="panel-body">
-            <%= post.user.full_name %>
-          </div>
+  <hr class="text-center">
+  <% @posts.each do |post| %>
+    <%= link_to post_path(post) do %>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title"><%= post.title %></h3>
         </div>
-      <% end %>
+        <div class="panel-body">
+          <%= post.user.full_name %>
+        </div>
+      </div>
     <% end %>
-  </ul>
+  <% end %>
   <%= will_paginate @posts %>
 <% else %>
   <h3 class="text-center">There are no posts yet!</h3>
