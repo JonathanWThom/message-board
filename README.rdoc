@@ -1,28 +1,29 @@
-== README
+# Message Board
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Jonathan Thom
 
-Things you may want to cover:
+A simple message board application.
 
-* Ruby version
+### Set Up
 
-* System dependencies
+Deployed at [bk-message-board.herokuapp.com](http://bk-message-board.herokuapp.com/)
 
-* Configuration
+Or, you get it up and running through the following steps:
 
-* Database creation
+1. Clone it.
+2. ```bundle install```
+3. ```postgres```
+4. ```rake db:setup```
+5. ```rails s```
 
-* Database initialization
+### Tech
 
-* How to run the test suite
+Ruby on Rails
 
-* Services (job queues, cache servers, search engines, etc.)
+jQuery
 
-* Deployment instructions
+And some cool gems like Devise, Bootstrap_Form, and Will_Paginate
 
-* ...
+### License
 
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+MIT
